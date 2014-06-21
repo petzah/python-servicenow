@@ -108,3 +108,6 @@ class Auth(object):
         if displayvariables:
             params['displayvariables'] = 'true'
         return self.session.post('%s/%s' % (self.instance, table), params=params, timeout=self.timeout)
+
+    def _get_session(self):
+        return self.session
