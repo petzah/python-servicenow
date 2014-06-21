@@ -20,7 +20,7 @@ class Auth(object):
         if metaon:
             query += '^' + '^'.join(['%sON%s' % (field, value) for field, value in metaon.iteritems()])
         params = {
-            'JSON':             '',
+            'JSONv2':             '',
             'sysparm_action':   'getKeys',
             'sysparm_query': query
         }
@@ -28,7 +28,7 @@ class Auth(object):
 
     def _list_by_query(self, table, query):
         params = {
-            'JSON':             '',
+            'JSONv2':             '',
             'sysparm_action':   'getKeys',
             'sysparm_query':    query
         }
@@ -39,7 +39,7 @@ class Auth(object):
         if metaon:
             query += '^' + '^'.join(['%sON%s' % (field, value) for field, value in metaon.iteritems()])
         params = {
-            'JSON':             '',
+            'JSONv2':             '',
             'sysparm_action':   'getRecords',
             'sysparm_query': query
         }
@@ -51,7 +51,7 @@ class Auth(object):
 
     def _get_by_query(self, table, query, displayvalue=False, displayvariables=False):
         params = {
-            'JSON':             '',
+            'JSONv2':             '',
             'sysparm_action':   'getRecords',
             'sysparm_query': query
         }
@@ -63,7 +63,7 @@ class Auth(object):
 
     def _post(self, table, data, displayvalue=False, displayvariables=False):
         params = {
-            'JSON':             '',
+            'JSONv2':             '',
             'sysparm_action':   'insert'
         }
         if displayvalue:
@@ -75,7 +75,7 @@ class Auth(object):
     def _update(self, table, where, data, displayvalue=False, displayvariables=False):
         query = '^'.join(['%s=%s' % (field, value) for field, value in where.iteritems()])
         params = {
-            'JSON':             '',
+            'JSONv2':             '',
             'sysparm_action':   'update',
             'sysparm_query':    query
         }
@@ -87,7 +87,7 @@ class Auth(object):
 
     def _update_by_query(self, table, query, data, displayvalue=False, displayvariables=False):
         params = {
-            'JSON':             '',
+            'JSONv2':             '',
             'sysparm_action':   'update',
             'sysparm_query':    query
         }
@@ -99,7 +99,7 @@ class Auth(object):
 
     def _delete(self, table, id, displayvalue=False, displayvariables=False):
         params = {
-            'JSON':             '',
+            'JSONv2':             '',
             'sysparm_action':   'deleteRecord',
             'sysparm_sys_id':    id
         }
